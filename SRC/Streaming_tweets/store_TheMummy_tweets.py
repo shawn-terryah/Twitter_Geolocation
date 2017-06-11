@@ -21,7 +21,7 @@ class StreamListener(tweepy.StreamListener):
         """This will be called each time we receive stream data"""
         client = MongoClient()
 
-        # Use Mongo the_mummy database
+        # Use the_mummy database in MongoDB, if it does not exist it will be created for you
         db = client.the_mummy
 
         # Decode JSON
@@ -29,7 +29,8 @@ class StreamListener(tweepy.StreamListener):
 
         # I'm only storing tweets in English
         if "lang" in datajson and datajson["lang"] == "en":
-            # Store tweet info into the the_mummy_collection of the_mummy database.
+            # Store tweet info into the the_mummy_collection of the_mummy database, if the_mummy_collection
+            # does not esist it will be created for you.
             db.the_mummy_collection.insert_one(datajson)
 
 
