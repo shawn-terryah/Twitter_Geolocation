@@ -27,8 +27,8 @@ def Tweets_JSON_to_CSV(file_list, csv_output_file):
                     f.writerow([tweet['text'], # Tweet
                                 tweet['place']['country_code'], # Geolocated country code
                                 tweet['place']['full_name'],  # Geolocated City, State
-                                tweet['place']['full_name'],# Geolocated City, State ()
-                                tweet['place']['bounding_box'], #polygon coordinates
+                                tweet['place']['full_name'], # Geolocated City, State
+                                tweet['place']['bounding_box'], # Polygon coordinates
                                 tweet['user']['screen_name'], # User's screen name
                                 tweet['user']['description'], # User's description field
                                 tweet['user']['favourites_count'], # User's favorites count
