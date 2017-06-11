@@ -21,38 +21,38 @@ class StreamListener(tweepy.StreamListener):
         """This will be called each time we receive stream data"""
         client = MongoClient()
 
-        # Use us_tweets database
-        db = client.us_tweets
+        # Store the tweet data in a database callled 'training_tweets' in MongoDB, if 
+        # 'training_tweets' does not already exist it will be created for you
+        db = client.training_tweets
 
         # Decode JSON
         datajson = json.loads(data)
 
         # I'm only storing tweets in English
         if "lang" in datajson and datajson["lang"] == "en":
-            # Store tweet info into the us_tweets_collection collection.
-            db.us_tweets_collection.insert_one(datajson)
+            # Store tweet data in the 'training_tweets_collection' collection of the 'training_tweets' database, 
+            # if the 'training_tweets_collection' does not already exist it will be created for you
+            db.training_tweets_collection.insert_one(datajson)
 
 
 if __name__ == "__main__":
 
-    consumer_key = "7uxFa7rtaADBZn8sqB6mZBAQe"
-    consumer_secret = 	"mBKqGXnZRHfq2yHzAjWBKQILb2d0bNvb2rNuINziLmOjmDdACz"
-    access_token = "857859260335759360-DlIh1PZAHxjoXlkq2nFjgZ7Lvcs03A0"
-    access_token_secret = 	"thQ7lro6ByXZyjnfXgGJcjMt26XT84adIMzSnC2dPdZD8"
+    # these are provided to you through the Twitter API after you create a account
+    consumer_key = "your_consumer_key"
+    consumer_secret = "your_consumer_secret"
+    access_token = "your_access_token"
+    access_token_secret = 	"your_access_token_secret"
 
     auth1 = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth1.set_access_token(access_token, access_token_secret)
 
-    # api = tweepy.API(auth)
-
-    '''LOCATIONS are the coordinate (long , lat) corners for a box that bins,
-    where the twitter must come from. The first pair is the southwest
-    corner and the second pair is the northwest corner of the box. The below
-    pairs are for the contigous US, Alaska, and Hawaii'''
+    '''LOCATIONS are the coordinate (long , lat) corners for a box that restricts the geographic area 
+    from which you will receive tweets. The first two define the southwest corner of the box
+    and the second two deine the northwest corner of the box. Below are the coordinates for 
+    three boxes that define the contigous US, Alaska, and Hawaii'''
     LOCATIONS = [-124.7771694, 24.520833, -66.947028, 49.384472,
                  -164.639405, 58.806859, -144.152365, 71.76871,
                  -160.161542, 18.776344, -154.641396, 22.878623]
-
 
     stream_listener = StreamListener(api=tweepy.API(wait_on_rate_limit=True))
     stream = tweepy.Stream(auth=auth1, listener=stream_listener)
