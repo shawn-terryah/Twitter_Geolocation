@@ -2,6 +2,11 @@ import tweepy
 import json
 from pymongo import MongoClient
 
+
+'''Note: this script is the same as 'store_training_tweets.py' except for the names of the MongoDB 
+database and MongoDB collection where these tweets will be stored. This set of tweets will be used to validate and 
+score the final model'''
+
 class StreamListener(tweepy.StreamListener):
     """
     tweepy.StreamListener is a class provided by tweepy used to access
@@ -21,8 +26,8 @@ class StreamListener(tweepy.StreamListener):
         """This will be called each time we receive stream data"""
         client = MongoClient()
 
-        # Store the tweet data in a database callled 'training_tweets' in MongoDB, if 
-        # 'training_tweets' does not already exist it will be created for you
+        # Store the tweet data in a database called 'testing_tweets' in MongoDB, if 
+        # 'testing_tweets' does not already exist it will be created for you
         db = client.training_tweets
 
         # Decode JSON
@@ -30,9 +35,9 @@ class StreamListener(tweepy.StreamListener):
 
         # I'm only storing tweets in English
         if "lang" in datajson and datajson["lang"] == "en":
-            # Store tweet data in the 'training_tweets_collection' collection of the 'training_tweets' database, 
-            # if the 'training_tweets_collection' does not already exist it will be created for you
-            db.training_tweets_collection.insert_one(datajson)
+            # Store tweet data in the 'testing_tweets_collection' collection of the 'testing_tweets' database, 
+            # if the 'testing_tweets_collection' does not already exist it will be created for you
+            db.testing_tweets_collection.insert_one(datajson)
 
 
 if __name__ == "__main__":
