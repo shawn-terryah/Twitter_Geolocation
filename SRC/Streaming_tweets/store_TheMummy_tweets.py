@@ -35,10 +35,11 @@ class StreamListener(tweepy.StreamListener):
 
 if __name__ == "__main__":
 
-    consumer_key = 
-    consumer_secret = 
-    access_token = 
-    access_token_secret = 
+    # these are provided to you through the Twitter API after you create a account
+    consumer_key = "your_consumer_key"
+    consumer_secret = "your_consumer_secret"
+    access_token = "your_access_token"
+    access_token_secret = "your_access_token_secret"
 
     auth1 = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth1.set_access_token(access_token, access_token_secret)
