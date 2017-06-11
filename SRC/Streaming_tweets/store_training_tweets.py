@@ -21,7 +21,7 @@ class StreamListener(tweepy.StreamListener):
         """This will be called each time we receive stream data"""
         client = MongoClient()
 
-        # Store the tweet data in a database callled 'training_tweets' in MongoDB, if 
+        # Store the tweet data in a database called 'training_tweets' in MongoDB, if 
         # 'training_tweets' does not already exist it will be created for you
         db = client.training_tweets
 
