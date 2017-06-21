@@ -1,5 +1,14 @@
-# Twitter_Geolocation
-Geolocating twitter users by the content of their tweets
+# Geolocation of Twitter Users by the content of their tweet
+
+
+
+
+
+
+
+
+
+
 
 ### High level description:
 
