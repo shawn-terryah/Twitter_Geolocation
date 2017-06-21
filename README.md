@@ -22,4 +22,4 @@ Unfortunately, only a tiny faction of twitter users have geotracking enabled for
 
 
 
-![Training-Tweets](Training_Tweets.png)
+![Training-Tweets](Imgs/Training_Tweets.png)
