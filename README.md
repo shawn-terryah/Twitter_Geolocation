@@ -1,4 +1,4 @@
-# Geolocation of Twitter Users by the content of their tweet
+# Geolocation of Twitter Users
 
 
 
