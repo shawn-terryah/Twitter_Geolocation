@@ -29,5 +29,8 @@ Unfortunately, only a tiny faction of twitter users have geotracking enabled for
 ## 379-wise classification problem
 ![379-Cities](Imgs/379_cities.png)
 
+## Durham, NC
+![durham](Imgs/durham.png)
+
 ## Shreveport, LA
 ![shreveport](Imgs/shreveport.png)
