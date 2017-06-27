@@ -42,4 +42,4 @@ Unfortunately, only a tiny faction of twitter users have geotracking enabled for
 ![shreveport](Imgs/shreveport.png)
 
 ## Model Accuracy
-![accuracy](Imgs/moedel_accuracy.png)
+![accuracy](Imgs/model_accuracy.png)
