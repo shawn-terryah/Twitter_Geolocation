@@ -40,3 +40,6 @@ Unfortunately, only a tiny faction of twitter users have geotracking enabled for
 
 ## Shreveport, LA
 ![shreveport](Imgs/shreveport.png)
+
+## Model Accuracy
+![accuracy](Imgs/moedel_accuracy.png)
