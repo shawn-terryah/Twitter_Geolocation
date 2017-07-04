@@ -48,7 +48,7 @@ if __name__ == "__main__":
 
     '''LOCATIONS are the coordinate (long , lat) corners for a box that restricts the geographic area 
     from which you will receive tweets. The first two define the southwest corner of the box
-    and the second two define the northwest corner of the box. Below are the coordinates for 
+    and the second two define the northeast corner of the box. Below are the coordinates for 
     three boxes that define the contigous US, Alaska, and Hawaii'''
     LOCATIONS = [-124.7771694, 24.520833, -66.947028, 49.384472,
                  -164.639405, 58.806859, -144.152365, 71.76871,
