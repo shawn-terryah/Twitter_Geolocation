@@ -22,7 +22,7 @@ add_features = np.hstack((friends_count,
 
 # np.hstack add_features with the two decision function varibles from steps 2 & 3 
 meta_X = np.hstack((location_SVC_decsfunc,        # from Step 2
-                    tweet_SVC_decsfunc,          # from Step 3 
+                    tweet_SVC_decsfunc,           # from Step 3 
                     add_features))
 meta_y = meta_df['closest_major_city'].values
 
