@@ -14,6 +14,11 @@ meta_tweet_doc = meta_df['tweet'].values
 meta_location_Y = meta_df['closest_major_city'].values
 
 # Tokenize and vectorize the user described locations
+tknzr = TweetTokenizer(strip_handles=True, reduce_len=True, preserve_case=False)
+
+def tokenize(tweet):
+    return tknzr.tokenize(tweet)
+  
 tweet_vectorizer = TfidfVectorizer(stop_words='english', tokenizer=tokenize)
 base_tweet_X = tweet_vectorizer.fit_transform(base_tweet_doc.ravel())
 
