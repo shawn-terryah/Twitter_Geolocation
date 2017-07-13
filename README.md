@@ -1,4 +1,4 @@
-![Header](Imgs/header.png)
+![header](Imgs/header1.png)
 
 ## Motivation for the Project
 
