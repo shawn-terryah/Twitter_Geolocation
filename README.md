@@ -229,7 +229,7 @@ def plot_contiguous_US_tweets(lon, lat, file_path):
 
 The resulting plots for the contiguous US, Alaska, and Hawaii were joined in Photoshop and are shown on the left. The plot on the right is from the Vulcan Project at Purdue University and shows carbon footprints in the contiguous US. As you can see, the plots are very similiar providing one indication that streaming tweets in this way provides a representative sample of the US population in terms of geographic location.
 
-![training_tweets](Images/training_tweets.png)
+![training_tweets](Imgs/training_tweets.png)
 
 #### 'tweet_time_secs'
 
@@ -359,7 +359,7 @@ df = df.groupby(['screen_name']).agg(agg_funcs).reset_index()
 
 Since the training tweets came from over 15,500 cities, and I didn't want to do a 15,500-wise classification problem, I used the centroids to remap all the training tweets to their closest major city from a list of 378 major US cities based on population (plus the single label for tweets outside the US, which were all remapped to Toronto). This left me with a 379-wise classification problem. Here is a plot of those major cities and the code to remap all the US training tweets to their closest major US city:
 
-![major_cities](Images/379_cities.png)
+![major_cities](Imgs/379_cities.png)
 
 ```python
 import numpy as np
@@ -426,7 +426,7 @@ The steps below were run on an Amazon Web Services r3.8xlarge EC2 instance with 
 
 ### *High-level Overview of the Stacked Model*
 
-![model_diagram](Images/model_overview.png)
+![model_diagram](Imgs/model_overview.png)
 
 ### Step 1: Load dependencies and prepare the cleaned data for model fitting
 
@@ -785,21 +785,21 @@ if __name__ == "__main__":
 
 ### *Example 1: Eugene, OR* 
 
-![Eugene, OR](Images/Eugene_OR.png)
+![Eugene, OR](Imgs/Eugene_OR.png)
 
 ### *Example 2: Durham, NC* 
 
-![Durham, NC](Images/Durham_NC.png)
+![Durham, NC](Imgs/Durham_NC.png)
 
 ### *Example 3: Shreveport, LA* 
 
-![Shreveport, LA](Images/Shreveport_LA.png)
+![Shreveport, LA](Imgs/Shreveport_LA.png)
 
 ### Tweet Term Importances for these Cities
 
 To get an idea of what tweet terms were important for predicting these cities, I went through and calculated mean tf-idf values for each of these cities. Below are some of the more interesting terms for each of these cities. To generate these plots I followed an excellent guide written by [Thomas Buhrmann](https://buhrmann.github.io/tfidf-analysis.html).   
 
-![term_importance](Images/city_tweet_term_importances.png)
+![term_importance](Imgs/city_tweet_term_importances.png)
 
 #### *Emoji Skin Tone Modifications*
 
@@ -897,13 +897,13 @@ if __name__ == "__main__":
 
 #### *Histogram of Error Distances*
 
-![error_histogram](Images/histogram.png)
+![error_histogram](Imgs/histogram.png)
 
 #### *Influence of Tweet Number on the Model's Accuracy*
 
 Recall that for each user I wanted to make prediction on I went back to the API and pulled 200 of their most recent tweets. The plot below was generated using the same procedure as above with increasing numbers of tweets for each user. I originally chose 200 because this is the maximum number the API allows you to pull per distinct request. However, as you can see in the plot below, after about 100 tweets there is negligible improvement in the model's accuracy, meaning for future use it might not be necessary to pull so many tweets for each user.
 
-![error_plot](Images/error_by_tweet_number.png)
+![error_plot](Imgs/error_by_tweet_number.png)
 
 ## Final Notes
 
