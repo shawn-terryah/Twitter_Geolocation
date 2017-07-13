@@ -129,7 +129,7 @@ def find_centroid(row):
 df['centroid'] = map(lambda row: find_centroid(row), df['bounding_box'])
 ```
 
-Using the centroids I was able to plot the training tweets on a map using the Matplotlib Basemap Toolkit (SRC/Plotting/matplotlib_basemap.py). The plot on the right is from the Vulcan Project at Purdue University and shows carbon footprints in the contiguous US. As you can see, the plots are very similiar providing one indication that streaming tweets in this way provides a representative sample of the US population in terms of geographic location.
+Using the centroids I was able to generate the map on the left from the training tweets using the Matplotlib Basemap Toolkit (SRC/Plotting/matplotlib_basemap.py). The plot on the right is from the Vulcan Project at Purdue University and shows carbon footprints in the contiguous US. As you can see, the plots are very similiar providing one indication that streaming tweets in this way provides a representative sample of the US population in terms of geographic location.
 
 ![training_tweets](Imgs/training_tweets.png)
 
