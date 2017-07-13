@@ -177,7 +177,7 @@ df.dropna(axis=0, inplace=True)
 
 #### Tweets Outside the US
 
-The bounding box I used to filter tweets from the contiguous US during the streaming process did not perfectly fit the contiguous US; therefore, I also collected a number of tweets from outside the US. Since the goal for this project was to predict the US city-level location of Twitter users, if the tweet occured outside the US I relabelled all these tweets with a single label. For tweets outside the US, 'country_code' was relabelled to 'NOT_US,' and 'geo_location' (note: the API calls this field 'full_name') was relabelled to 'NOT_IN_US, NONE':
+The bounding box I used to filter tweets from the contiguous US during the streaming process did not perfectly fit the contiguous US; therefore, I also collected a number of tweets from outside the US. Since the goal for this project was to predict the US city-level location of Twitter users, if the tweet occured outside the US I relabelled all these tweets with a single label. For tweets outside the US, 'country_code' was relabelled to 'NOT_US' and 'geo_location' (note: the API calls this field 'full_name') was relabelled to 'NOT_IN_US, NONE':
 
 ```python
 def relabel_geo_locations(row):
