@@ -395,8 +395,6 @@ A week after I collected the training data set, I collected a fresh data set to 
 
 ### Making Predictions on the Fresh Data Set
 
-### *UserLocationClassifier*
-
 ```python
 import pandas as pd
 import numpy as np
