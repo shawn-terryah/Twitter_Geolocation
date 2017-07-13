@@ -485,7 +485,7 @@ if __name__ == "__main__":
 
 ### Plotting the Locations of Twitter Users on a Map Using Bokeh
 
-Here are some examples of how the model performed on a few selected cities. For each of the maps shown below, the dots indicate the user's true location while the title of the map indicates where the model predicted them to be. As you can see, for each city there is a tight cluster around in and around the correct location, with only a handfull for way off misses. The code for generating these plots can be found at SRC/Plotting/bokeh_maps.py (note: the final plots shown here were constructed in Photoshop after first using the 'pan' and 'wheel_zoom' tools in Bokeh to capture screenshots of the contiguous US, Alaska, and Hawaii): 
+Here are some examples of how the model performed on a few selected cities. For each of the maps shown below, the dots indicate the user's true location while the title of the map indicates where the model predicted them to be. As you can see, for each city there is a tight cluster in and around the correct location, with only a handfull for way off misses. The code for generating these plots can be found at SRC/Plotting/bokeh_maps.py (note: the final plots shown here were constructed in Photoshop after first using the 'pan' and 'wheel_zoom' tools in Bokeh to capture screenshots of the contiguous US, Alaska, and Hawaii): 
 
 ### *Example 1: Eugene, OR* 
 
