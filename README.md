@@ -259,7 +259,7 @@ df = df.groupby(['screen_name']).agg(agg_funcs).reset_index()
 
 #### Remapping the Training Tweets to the Closest Major City
 
-Since the training tweets came from over 15,500 cities, and I didn't want to do a 15,500-wise classification problem, I used the centroids to remap all the training tweets to their closest major city from a list of 378 major US cities based on population (plus the single label for tweets outside the US, which were all remapped to Toronto)(SRC/Cleaning_tweets/remapping_to_major_city.py). This left me with a 379-wise classification problem. Here is a plot of those major cities:
+Since the training tweets came from over 15,500 cities, and I didn't want to do a 15,500-wise classification problem, I used the centroids to remap all the training tweets to their closest major city from a list of 378 major US cities based on population (plus the single label for tweets outside the US, which used Toronto's coordinates)(SRC/Cleaning_tweets/remapping_to_major_city.py). This left me with a 379-wise classification problem. Here is a plot of those major cities:
 
 ![major_cities](Imgs/379_cities.png)
 
