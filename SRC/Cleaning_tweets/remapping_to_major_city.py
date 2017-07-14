@@ -12,7 +12,7 @@ def load_US_coord_dict():
     pkl_file = open("US_coord_dict.pkl", 'rb')
     US_coord_dict = pickle.load(pkl_file)
     pkl_file.close()
-    return coord_dict
+    return US_coord_dict
     
 def find_dist_between(tup1, tup2):
     '''
