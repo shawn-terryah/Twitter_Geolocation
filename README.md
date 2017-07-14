@@ -395,7 +395,7 @@ A week after I collected the training data set, I collected a fresh data set to 
 
 ### Making Predictions on the Fresh Data Set
 
-The below script was run on the same Amazon Web Services r3.8xlarge EC2 instance that was used to build the model:
+To make predictions on the fresh data set, the below script was run on the same Amazon Web Services r3.8xlarge EC2 instance that was used to build the model:
 
 ```python
 import pandas as pd
