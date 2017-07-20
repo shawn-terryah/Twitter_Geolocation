@@ -20,15 +20,18 @@ class StreamListener(tweepy.StreamListener):
 
     def on_connect(self):
         """Called when the connection is made"""
+        
         print("You're connected to the streaming server.")
 
     def on_error(self, status_code):
         """This is called when an error occurs"""
+        
         print('Error: ' + repr(status_code))
         return False
 
     def on_data(self, data):
         """This will be called each time we receive stream data"""
+        
         client = MongoClient()
 
         # I stored the tweet data in a database called 'training_tweets' in MongoDB, if 
