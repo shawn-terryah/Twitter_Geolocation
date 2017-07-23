@@ -241,6 +241,7 @@ During the two week collection period many users tweeted more than once. To prev
 
 ```python
 from collections import Counter
+import numpy as np
 
 # aggregation functions
 agg_funcs = {'tweet' : lambda x: ' '.join(x), 
