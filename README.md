@@ -315,8 +315,8 @@ meta_location_doc = meta_df['user_described_location'].values
 
 # fit_transform a tf-idf vectorizer using base_location_doc and use it to transform meta_location_doc
 location_vectorizer = TfidfVectorizer(stop_words='english', tokenizer=tokenize, ngram_range=(1,2))
-base_location_X = location_vect.fit_transform(base_location_doc.ravel())
-meta_location_X = location_vect.transform(meta_location_doc)
+base_location_X = location_vectorizer.fit_transform(base_location_doc.ravel())
+meta_location_X = location_vectorizer.transform(meta_location_doc)
 
 # Fit a Linear SVC Model with 'base_location_X' and 'base_y'. Note: it is important to use 
 # balanced class weights otherwise the model will overwhelmingly favor the majority class.
